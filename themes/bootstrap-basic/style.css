@@ -51,3 +51,15 @@ Required WordPress CSS
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
 }
+.product-image{
+    height: 150px;
+}
+
+.product_title{
+    color: #0088cc;
+    text-decoration: none;
+}
+.product_block{
+    margin-right: 20px;
+}
+
