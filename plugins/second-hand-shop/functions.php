@@ -49,7 +49,7 @@ function display_second_hand_product_meta_box( $second_hand_product ) {
     <table>
         <tr>
             <td style="width: 100%">Short Description</td>
-            <td><input type="text" size="80" name="second_hand_product_short_description" value="<?php echo $short_description; ?>" /></td>
+            <td><textarea size="80" name="second_hand_product_short_description" value="<?php echo $short_description; ?>" ></textarea></td>
         </tr>
         <tr>
             <td style="width: 150px">Prodict Price</td>
