@@ -62,4 +62,6 @@ Required WordPress CSS
 .product_block{
     margin-right: 20px;
 }
-
+#primary .thumbnail{
+    margin-right: 20px;
+}

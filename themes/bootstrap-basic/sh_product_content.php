@@ -3,7 +3,7 @@
 
         <div class="thumbnail  ">
             <div class="product-image">
-                <?php the_post_thumbnail(array(150, 150)); ?>
+               <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(150, 150)); ?></a>
             </div>
         </div>
 
@@ -53,6 +53,5 @@
         </div><!-- .entry-content -->
     <?php } //endif; ?>
     <br>
-    <button class="btn">Купить</button>
 
 </article><!-- #post-## -->
