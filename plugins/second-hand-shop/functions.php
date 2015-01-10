@@ -114,5 +114,74 @@ function create_second_hand_product_taxonomies() {
 
 }
 
-wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.1' );
-wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '3.3.1', true );
+
+add_shortcode( 'add_second_hand_product', 'second_hand_product_add_form' );
+
+function second_hand_product_add_form(){
+
+$args = array(
+        'taxonomy' => 'second_hand_product_category',
+    );
+
+    $categories = get_categories( $args );
+
+    $html = '
+    	<form role="form" enctype="multipart/form-data" method="post"  action="'.SECOND_HAND_SHOP__PLUGIN_URL . 'sh_product_form.php'.'" >
+    	    <div class="form-group">
+    	        <label for="products">Наименование продукта:</label>
+    	        <input type="text" class="form-control" id="products" name="product_name" placeholder="Наименование продукта"/>
+    	    </div>
+            <div class="form-group">
+    	        <label for="katygory">Категория:</label>
+
+    	        <select name="product_category" id="katygory" class="form-control">
+    	        <option value=""></option>
+    	        ' ;
+
+    if($categories) {
+        foreach ($categories as $category) {
+
+            $html.='<option value="'.$category->name.'">'.$category->name.'</option>' ;
+
+        }
+    }
+
+        $html.= '
+    	        </select>
+    	    </div>
+            <div class="form-group">
+    	        <label for="">Короткое описание:</label>
+    	        <textarea name="short_description" id="" cols="30" rows="3" placeholder="Короткое описание:" class="form-control"></textarea>
+    	    </div>
+
+            <div class="form-group">
+    	        <label for="">Полное описание:</label>
+    	        <textarea name="description" id="" cols="30" rows="9" placeholder="Полное описание:" class="form-control"></textarea>
+    	    </div>
+
+           <div class="form-group">
+    	        <label for="price">Цена:</label>
+    	        <input type="text" class="form-control" id="price" placeholder="Цена:" name="product_price"/>
+    	    </div>
+            <div class="form-group">
+    	        <label for="contacts">Контактная информация:</label>
+    	         <textarea name="contact_information" id="" cols="30" rows="9" placeholder="Контактная информация:" class="form-control"></textarea>
+
+    	    </div>
+            <div class="form-group">
+    	        <label for="tel">Телефон:</label>
+    	        <input type="tel" class="form-control" id="tel" placeholder="Телефон:" name="phone"/>
+    	    </div>
+    	    <div class="form-group">
+    	       <label for="example-jpg-file">Select File To Upload:	</label>
+	<input type="file" class="form-control"  id="example-jpg-file" name="example-jpg-file" value="" />
+
+
+
+    	    </div>
+    	    <button class="btn btn-primary" >Отправить заявку</button>
+
+		</form>
+    ';
+    return $html;
+}

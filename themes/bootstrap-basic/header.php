@@ -26,11 +26,11 @@
 		<!--[if lt IE 8]>
 			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 		<![endif]-->
-		
-		
-		
-		
-		
+
+
+
+
+
 		<div class="container page-container">
 			<?php do_action('before'); ?> 
 			<header role="banner">
@@ -57,7 +57,9 @@
 						<?php } // endif; ?> 
 					</div>
 				</div><!--.site-branding-->
-				
+
+                <div class="pull-right"><a href="">Оставить заявку</a></div><br>
+
 				<div class="row main-navigation">
 					<div class="col-md-12">
 						<nav class="navbar navbar-default" role="navigation">
