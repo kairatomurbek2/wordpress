@@ -56,7 +56,7 @@ function display_second_hand_product_meta_box( $second_hand_product ) {
         <tr>
             <td style="width: 150px">Prodict Price</td>
             <td>
-                <input type="text" size="80" name="second_hand_product_price" value="<?php echo $price; ?>" />
+                <input type="text" size="30" name="second_hand_product_price" value="<?php echo $price; ?>" />
 
             </td>
         </tr>
@@ -66,7 +66,7 @@ function display_second_hand_product_meta_box( $second_hand_product ) {
         </tr>
         <tr>
             <td style="width: 100%">Seller phone</td>
-            <td><input type="text" size="80" name="second_hand_product_seller_phone" value="<?php echo $seller_phone; ?>" /></td>
+            <td><input type="text" size="30" name="second_hand_product_seller_phone" value="<?php echo $seller_phone; ?>" /></td>
         </tr>
 
     </table>
@@ -118,6 +118,9 @@ function create_second_hand_product_taxonomies() {
 add_shortcode( 'add_second_hand_product', 'second_hand_product_add_form' );
 
 function second_hand_product_add_form(){
+
+
+
 
 $args = array(
         'taxonomy' => 'second_hand_product_category',
@@ -174,14 +177,26 @@ $args = array(
     	    </div>
     	    <div class="form-group">
     	       <label for="example-jpg-file">Select File To Upload:	</label>
-	<input type="file" class="form-control"  id="example-jpg-file" name="example-jpg-file" value="" />
+	<input type="file" class="form-control"  id="example-jpg-file" name="picture" value="" />
 
 
 
     	    </div>
+    	    <div>
+
+<img id="captcha" src="'.SECOND_HAND_SHOP__PLUGIN_URL.'securimage/securimage_show.php" alt="CAPTCHA Image" />
+<input type="text" name="captcha_code" size="10" maxlength="6" />
+    <a href="#" onclick="document.getElementById('."'".'captcha'."'".').src = '."'".'/securimage/securimage_show.php?'."".' + Math.random(); return false">[ Different Image ]</a>
+
+
+            </div>
+
     	    <button class="btn btn-primary" >Отправить заявку</button>
 
 		</form>
     ';
+
     return $html;
+
+
 }
