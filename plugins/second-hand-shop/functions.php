@@ -126,6 +126,7 @@ add_shortcode('add_second_hand_product', 'second_hand_product_add_form');
 function second_hand_product_add_form()
 {
     wp_enqueue_script('bootstrap-validator', SECOND_HAND_SHOP__PLUGIN_URL . 'bootstrap-validator-master/dist/validator.js', array('jquery'));
+    wp_enqueue_script('process-form', SECOND_HAND_SHOP__PLUGIN_URL . 'js/process_form.js');
 
     $args = array(
         'taxonomy' => 'second_hand_product_category',
@@ -134,7 +135,7 @@ function second_hand_product_add_form()
     $categories = get_categories($args);
 
     $html = '
-    	<form data-toggle="validator" role="form" enctype="multipart/form-data" method="post"  action="' . SECOND_HAND_SHOP__PLUGIN_URL . 'sh_product_form.php' . '" >
+    	<form data-toggle="validator" role="form" id="add_product_form" enctype="multipart/form-data" method="post" onsubmit="return processForm('."'".SECOND_HAND_SHOP__PLUGIN_URL."'".')"  action="' . SECOND_HAND_SHOP__PLUGIN_URL . 'sh_product_form.php' . '" >
     	    <div class="form-group">
     	        <label for="products">Наименование продукта:</label>
     	        <input type="text" class="form-control" id="products" name="product_name" placeholder="Наименование продукта" required />
@@ -179,7 +180,7 @@ function second_hand_product_add_form()
     	    </div>
             <div class="form-group">
     	        <label for="tel">Телефон:</label>
-    	        <input type="tel" pattern="Reg(ular )?Exp(ression)?"  class="form-control" id="tel" placeholder="Телефон:" name="phone" required/>
+    	        <input type="tel"   class="form-control" id="tel" placeholder="Телефон:" name="phone" required/>
 
     	    </div>
     	    <div class="form-group">
@@ -189,6 +190,7 @@ function second_hand_product_add_form()
     	    <div>
 <img id="captcha" src="' . SECOND_HAND_SHOP__PLUGIN_URL . 'securimage/securimage_show.php" alt="CAPTCHA Image" />
 <input type="text" name="captcha_code" size="10" maxlength="6" required />
+<p id="incorrect_CAPTCHA">Не правильно ввели капчу</p>
 
             </div><br><br>
     	    <button class="btn btn-primary" >Отправить заявку</button>
