@@ -7,6 +7,20 @@ include_once 'securimage/securimage.php';
 
 $securimage = new Securimage();
 
+
+if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+    if ($securimage->check($_POST['captcha_code']) == false) {
+        $return = array('error' => 1);
+        die(json_encode($return));
+
+    } else {
+        $return = array('error' => 0);
+        die(json_encode($return));
+    }
+
+}
+
+
 if ($securimage->check($_POST['captcha_code']) == false) {
     echo "The security code entered was incorrect.<br /><br />";
     echo "Please go <a href='javascript:history.go(-1)'>back</a> and try again.";
