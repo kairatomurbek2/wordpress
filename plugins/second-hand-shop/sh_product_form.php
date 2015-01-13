@@ -23,6 +23,7 @@ function saveSecondHandProduct()
         'post_title' => $_POST['product_name'],
         'post_content' => $_POST['description'],
         'post_type' => 'second_hand_products',
+        'post_status' => 'publish',
     );
 
     $new_post_id = wp_insert_post($post);
@@ -34,6 +35,7 @@ function saveSecondHandProduct()
     wp_set_post_terms($new_post_id, $_POST['product_category'], 'second_hand_product_category');
 
     savePostFeaturedImage($new_post_id);
+    wp_publish_post($new_post_id );
 }
 
 function savePostFeaturedImage($post_id)
