@@ -15,7 +15,8 @@
 		<?php the_excerpt(); ?> 
 		<div class="clearfix"></div>
 	</div><!-- .entry-summary -->
-	<?php } else { ?> 
+	<?php } else { ?>
+
 	<div class="entry-content">
 		<?php the_content(bootstrapBasicMoreLinkText()); ?> 
 		<div class="clearfix"></div>

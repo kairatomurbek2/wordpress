@@ -27,11 +27,7 @@ $main_column_size = bootstrapBasicGetMainColumnSize();
 							*/
 							get_template_part('content', get_post_format());
 						}// end while
-
-                            echo do_shortcode( '[add_second_hand_product]' );
-
-
-						bootstrapBasicPagination();
+							bootstrapBasicPagination();
 						?>
 						<?php } else { ?>
 						<?php get_template_part('no-results', 'index'); ?>

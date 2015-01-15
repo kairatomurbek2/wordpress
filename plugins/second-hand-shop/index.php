@@ -4,7 +4,8 @@ Plugin Name: Second Hand Shop
 Plugin URI:
 Description: plugin for creating the Second Hand Store
 Version: 1
-Author: Jika
+Author: it-attractor
+Author URI: http://it-attractor.com/
 */
 
 

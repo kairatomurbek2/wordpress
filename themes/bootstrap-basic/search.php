@@ -28,11 +28,19 @@ $main_column_size = bootstrapBasicGetMainColumnSize();
 							* If you want to override this in a child theme, then include a file
 							* called content-___.php (where ___ is the Post Format name) and that will be used instead.
 							*/
-							get_template_part('content', 'search');
+							if(get_post_type(get_the_ID()) == 'second_hand_products')
+							{
+								get_template_part('sh_product_content', 'search');
+							}
+							else
+							{
+								get_template_part('content', 'search');
+
+							}
 						}// end while
-						
+
 						bootstrapBasicPagination();
-						?> 
+						?>
 						<?php } else { ?> 
 						<?php get_template_part('no-results', 'search'); ?>
 						<?php } // endif; ?> 

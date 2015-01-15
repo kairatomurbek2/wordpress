@@ -13,7 +13,7 @@ $contact_information = esc_html(get_post_meta(get_the_ID(), 'contact_information
                 <div class="span4">
                     <div class="thumbnail col-md-5 ">
                         <?php the_post_thumbnail(array(600, 600)); ?>
-                        <img width="300" height="300" src="http://xpert.kg/wp-content/uploads/2014/11/bullet_m5_hp_titanium-300x300.jpg" class="attachment-300x300 wp-post-image" alt="bullet_m5_hp_titanium" />                        </div>
+                    </div>
                 </div>
 
                 <div class="span4">
