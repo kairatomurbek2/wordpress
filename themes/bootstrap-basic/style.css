@@ -65,3 +65,7 @@ Required WordPress CSS
 #primary .thumbnail{
     margin-right: 20px;
 }
+.site-main{
+	display: flex;
+	flex-flow: row wrap;
+}

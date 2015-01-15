@@ -11,7 +11,7 @@ $contact_information = esc_html(get_post_meta(get_the_ID(), 'contact_information
         <div id="post-<?php the_ID(); ?>"  <?php post_class(); ?>>
             <article>
                 <div class="span4">
-                    <div class="thumbnail col-md-5 ">
+                    <div class="thumbnail col-md-8">
                         <?php the_post_thumbnail(array(600, 600)); ?>
                     </div>
                 </div>

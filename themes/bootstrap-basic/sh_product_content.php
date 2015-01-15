@@ -1,4 +1,4 @@
-<article class="thumbnail col-md-2 product_block" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="thumbnail col-md-3 product_block" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
 
         <div class="thumbnail  ">

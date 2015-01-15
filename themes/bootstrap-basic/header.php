@@ -58,7 +58,7 @@
 					</div>
 				</div><!--.site-branding-->
 
-				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+				<button class="btn btn-primary btn-lg pull-right" style="margin-bottom: 10px" data-toggle="modal" data-target="#myModal">
 					Оставить заявку
 				</button>
 				<?php echo do_shortcode( '[add_second_hand_product]' ); ?>
