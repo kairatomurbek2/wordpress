@@ -60,6 +60,9 @@
                         <div class="form-group">
                         <img id="captcha" src="<?php echo SECOND_HAND_SHOP__PLUGIN_URL ?>/securimage/securimage_show.php" alt="CAPTCHA Image" />
                         <input type="text" name="captcha_code" size="10" maxlength="6" required />
+                            <a href="#" onclick="document.getElementById('captcha').src = '<?php echo SECOND_HAND_SHOP__PLUGIN_URL ?>/securimage/securimage_show.php?sid=' + Math.random(); return false">
+                                <img src="<?php echo SECOND_HAND_SHOP__PLUGIN_URL ?>/securimage/images/refresh.png" alt="Reload Image" onclick="this.blur()" align="bottom" border="0" height="32" width="32">
+                            </a>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -72,5 +75,3 @@
         </div>
     </div>
 </div>
-<!--//<a href="#" onclick="document.getElementById('."'".'captcha'."'".').src = '."'".-->
-<!--'/securimage/securimage_show.php?'."".' + Math.random(); return false">[ Different Image ]</a>-->
