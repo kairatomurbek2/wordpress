@@ -20,7 +20,9 @@
                             <option value=""></option>
                             <?php
                             foreach ($categories as $category) {
-                                $html .= '<option value="' . $category->term_id . '">' . $category->name . '</option>';
+                                if($category->parent !='0')
+                                    $html .= '<option value="' . $category->term_id . '">'
+                                        . $category->name . '</option>';
                             }
                             echo $html;
                             ?>
