@@ -199,7 +199,7 @@ if (!function_exists('bootstrapBasicMoreLinkText')) {
 	 * Custom more link (continue reading) text
 	 * @return string
 	 */
-	function bootstrapBasicMoreLinkText() 
+	function bootstrapBasicMoreLinkText()
 	{
 		return __('Continue reading <span class="meta-nav">&rarr;</span>', 'bootstrap-basic');
 	}// bootstrapBasicMoreLinkText
@@ -213,7 +213,7 @@ if (!function_exists('bootstrapBasicPagination')) {
 	 * @param string $pagination_align_class
 	 * @return string the content already echo
 	 */
-	function bootstrapBasicPagination($pagination_align_class = 'pagination-center pagination-row') 
+	function bootstrapBasicPagination($pagination_align_class = 'pagination-center pagination-row')
 	{
 		global $wp_query;
 			$big = 999999999;
@@ -230,7 +230,7 @@ if (!function_exists('bootstrapBasicPagination')) {
 			unset($big);
 
 			if (is_array($pagination_array) && !empty($pagination_array)) {
-				echo '<nav class="' . $pagination_align_class . '">';
+				echo '<footer class="' . $pagination_align_class . '">';
 				echo '<ul class="pagination">';
 				foreach ($pagination_array as $page) {
 					echo '<li';
@@ -246,7 +246,7 @@ if (!function_exists('bootstrapBasicPagination')) {
 					echo '</li>';
 				}
 				echo '</ul>';
-				echo '</nav>';
+				echo '</footer>';
 			}
 
 			unset($page, $pagination_array);

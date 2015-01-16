@@ -17,12 +17,11 @@
                         <label for="katygory">Категория:</label>
 
                         <select name="product_category" id="katygory" class="form-control" required >
-                            <option value=""></option>
+                            <option value="">Выберите категорию:</option>
                             <?php
+                            //if($category != 0)
                             foreach ($categories as $category) {
-                                if($category->parent !='0')
-                                    $html .= '<option value="' . $category->term_id . '">'
-                                        . $category->name . '</option>';
+                                $html .= '<option value="' . $category->term_id . '">' . $category->name . '</option>';
                             }
                             echo $html;
                             ?>

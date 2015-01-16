@@ -101,6 +101,7 @@ function second_hand_product_add_form()
 
     $args = array(
         'taxonomy' => 'second_hand_product_category',
+        'hide_empty'=> 0,
     );
     $categories = get_categories($args);
     ob_start();
@@ -109,3 +110,4 @@ function second_hand_product_add_form()
 
     return $html;
 }
+

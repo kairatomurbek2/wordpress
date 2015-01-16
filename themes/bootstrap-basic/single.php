@@ -38,5 +38,5 @@ $main_column_size = bootstrapBasicGetMainColumnSize();
 						?> 
 					</main>
 				</div>
-<?php get_sidebar('right'); ?> 
+<?php get_sidebar('right'); ?>
 <?php get_footer(); ?> 

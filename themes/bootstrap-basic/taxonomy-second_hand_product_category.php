@@ -29,12 +29,12 @@ $main_column_size = bootstrapBasicGetMainColumnSize();
                 get_template_part('sh_product_content', get_post_format());
             }// end while
 
-            bootstrapBasicPagination();
             ?>
         <?php } else { ?>
             <?php get_template_part('no-results', 'index'); ?>
         <?php } // endif; ?>
     </main>
+    <?php bootstrapBasicPagination(); ?>
 </div>
 <?php get_sidebar('right'); ?>
 <?php get_footer(); ?>
