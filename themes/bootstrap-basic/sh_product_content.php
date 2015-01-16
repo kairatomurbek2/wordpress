@@ -14,7 +14,7 @@
         $price = number_format(get_post_meta(get_the_ID(), 'price', true));
         echo $price;
         ?>
-
+        сом
         <?php if ('post' == get_post_type()) { ?>
             <div class="entry-meta">
                 <?php bootstrapBasicPostOn(); ?>

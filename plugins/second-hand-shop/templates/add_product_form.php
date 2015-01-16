@@ -39,9 +39,17 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="price">Цена:</label>
-                        <input type="number"  min="1" class="form-control" id="price" placeholder="Цена:" name="product_price" required />
-
+                        <input type="number" min="1" class="form-control" id="price" placeholder="Цена:" name="product_price" required />
+                        <div class="dropdown clearfix">
+                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-expanded="false">
+                                Выберите валюту
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuDivider">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">сом</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">$</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="contacts">Контактная информация:</label>
@@ -54,8 +62,8 @@
 
                     </div>
                     <div class="form-group">
-                        <label for="example-jpg-file">Select File To Upload:	</label>
-                        <input type="file" class="form-control"  id="example-jpg-file" name="picture" value="" required/>
+                        <label for="example-jpg-file">Select File To Upload:</label>
+                            <input type="file" class="form-control"  id="example-jpg-file" name="picture" value="" required/>
                     </div>
                     <div>
                         <div class="form-group">
