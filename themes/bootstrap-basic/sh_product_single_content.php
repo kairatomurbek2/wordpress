@@ -3,6 +3,7 @@ $price = number_format(get_post_meta(get_the_ID(), 'price', true));
 $short_description = esc_html(get_post_meta(get_the_ID(), 'short_description', true));
 $seller_phone = esc_html(get_post_meta(get_the_ID(), 'seller_phone', true));
 $contact_information = esc_html(get_post_meta(get_the_ID(), 'contact_information', true));
+$seller_valuta = esc_html(get_post_meta(get_the_ID(), 'seller_valuta', true));
 ?>
 
 
@@ -24,10 +25,11 @@ $contact_information = esc_html(get_post_meta(get_the_ID(), 'contact_information
 
                 <div class="span4">
                     <h4 class="text-info"><?php the_title(); ?></h4>
-                    <h4 class="text-success">Цена: <?php echo $price; ?> сом</h4>
+                    <h4 class="text-success">Цена: <?php echo $price." " .$seller_valuta; ?> </h4>
                     <h4 class="text-success">Телефон продавца: <?php echo $seller_phone;  ?> </h4>
                     <h4 class="text-success">Контактная информация: <?php echo $contact_information;  ?> </h4>
                 </div>
+
                 <div class="clearfix"></div>
 
                 <div class="span8">

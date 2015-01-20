@@ -1,3 +1,7 @@
+<?php
+$seller_valuta = esc_html(get_post_meta(get_the_ID(), 'seller_valuta', true));
+?>
+
 <article class="thumbnail col-md-3 product_block" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
 
@@ -12,9 +16,9 @@
         Цена:
         <?php
         $price = number_format(get_post_meta(get_the_ID(), 'price', true));
-        echo $price;
+        echo $price. " ".$seller_valuta;
         ?>
-        сом
+
         <?php if ('post' == get_post_type()) { ?>
             <div class="entry-meta">
                 <?php bootstrapBasicPostOn(); ?>

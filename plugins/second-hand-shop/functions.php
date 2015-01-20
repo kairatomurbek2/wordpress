@@ -67,6 +67,9 @@ function add_second_hand_product_fields($second_hand_product_id, $second_hand_pr
         if (isset($_POST['second_hand_product_seller_phone']) && $_POST['second_hand_product_seller_phone'] != '') {
             update_post_meta($second_hand_product_id, 'seller_phone', $_POST['second_hand_product_seller_phone']);
         }
+        if (isset($_POST['second_hand_product_seller_valuta']) && $_POST['second_hand_product_seller_valuta'] != '') {
+            update_post_meta($second_hand_product_id, 'seller_valuta', $_POST['second_hand_product_seller_valuta']);
+        }
 
     }
 }
