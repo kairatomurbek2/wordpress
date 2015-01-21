@@ -15,24 +15,27 @@ $seller_valuta = esc_html(get_post_meta(get_the_ID(), 'seller_valuta', true));
                     <div class="thumbnail col-md-6">
                         <?php the_post_thumbnail(array(600, 600)); ?>
 
-<!--                        --><?php //if ( has_post_thumbnail() ) {
-//                            the_post_thumbnail();
-//                        } else { ?>
-<!--                            <img src="--><?php //echo SECOND_HAND_SHOP__PLUGIN_URL ?><!--/img/no.png" />-->
-<!--                        --><?php //} ?>
+                        <!--                        --><?php //if ( has_post_thumbnail() ) {
+                        //                            the_post_thumbnail();
+                        //                        } else { ?>
+                        <!--                            <img src="-->
+                        <?php //echo SECOND_HAND_SHOP__PLUGIN_URL ?><!--/img/no.png" />-->
+                        <!--                        --><?php //} ?>
                     </div>
                 </div>
 
                 <div class="span4">
                     <h4 class="text-info"><?php the_title(); ?></h4>
-                    <h4 class="text-success">Цена: <?php echo $price." " .$seller_valuta; ?> </h4>
-                    <h4 class="text-success">Телефон продавца: <?php echo $seller_phone;  ?> </h4>
-                    <h4 class="text-success">Контактная информация: <?php echo $contact_information;  ?> </h4>
-                    <?php global $current_user;
-                    get_currentuserinfo();
+                    <h4 class="text-success">Цена: <?php echo $price . " " . $seller_valuta; ?> </h4>
+                    <h4 class="text-success">Телефон продавца: <?php echo $seller_phone; ?> </h4>
+                    <h4 class="text-success">Контактная информация: <?php echo $contact_information; ?> </h4>
 
-                    echo 'E-mail : ' . $current_user->user_email . "<br>";
-                    echo 'Пользователь: ' . $current_user->display_name . "\n";
+                    <?php
+                    $blogusers = get_users('blog_id=1&orderby=nicename&role=subscriber');
+                    foreach ($blogusers as $user) {
+                        echo 'E-mail : ' . $user->user_email . "<br>";
+                        echo 'Пользователь : ' . $user->display_name . "<br>";
+                    }
                     ?>
                 </div>
 
@@ -47,7 +50,8 @@ $seller_valuta = esc_html(get_post_meta(get_the_ID(), 'seller_valuta', true));
 
         </div>
 
-    </div><!-- #content -->
+    </div>
+    <!-- #content -->
 </section>
 
 
