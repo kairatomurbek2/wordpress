@@ -28,6 +28,12 @@ $seller_valuta = esc_html(get_post_meta(get_the_ID(), 'seller_valuta', true));
                     <h4 class="text-success">Цена: <?php echo $price." " .$seller_valuta; ?> </h4>
                     <h4 class="text-success">Телефон продавца: <?php echo $seller_phone;  ?> </h4>
                     <h4 class="text-success">Контактная информация: <?php echo $contact_information;  ?> </h4>
+                    <?php global $current_user;
+                    get_currentuserinfo();
+
+                    echo 'E-mail : ' . $current_user->user_email . "<br>";
+                    echo 'Пользователь: ' . $current_user->display_name . "\n";
+                    ?>
                 </div>
 
                 <div class="clearfix"></div>
