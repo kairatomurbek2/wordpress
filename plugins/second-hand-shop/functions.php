@@ -70,6 +70,9 @@ function add_second_hand_product_fields($second_hand_product_id, $second_hand_pr
         if (isset($_POST['second_hand_product_seller_valuta']) && $_POST['second_hand_product_seller_valuta'] != '') {
             update_post_meta($second_hand_product_id, 'seller_valuta', $_POST['second_hand_product_seller_valuta']);
         }
+        if (isset($_POST['second_hand_product_seller_seller_users']) && wp_get_current_user()->display_name != '') {
+            update_post_meta($second_hand_product_id, 'seller_users', wp_get_current_user()->display_name);
+        }
 
     }
 }

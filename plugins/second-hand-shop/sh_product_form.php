@@ -47,6 +47,8 @@ function saveSecondHandProduct()
     add_post_meta($new_post_id, 'contact_information', $_POST['contact_information']);
     add_post_meta($new_post_id, 'seller_phone', $_POST['phone']);
     add_post_meta($new_post_id, 'seller_valuta', $_POST['seller_valuta']);
+    add_post_meta($new_post_id, 'seller_users', wp_get_current_user()->display_name);
+
     wp_set_post_terms($new_post_id, $_POST['product_category'], 'second_hand_product_category');
 
     savePostFeaturedImage($new_post_id);

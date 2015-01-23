@@ -4,6 +4,7 @@ $short_description = esc_html(get_post_meta(get_the_ID(), 'short_description', t
 $seller_phone = esc_html(get_post_meta(get_the_ID(), 'seller_phone', true));
 $contact_information = esc_html(get_post_meta(get_the_ID(), 'contact_information', true));
 $seller_valuta = esc_html(get_post_meta(get_the_ID(), 'seller_valuta', true));
+$seller_users = esc_html(get_post_meta(get_the_ID(), 'seller_users', true));
 ?>
 
 
@@ -31,11 +32,7 @@ $seller_valuta = esc_html(get_post_meta(get_the_ID(), 'seller_valuta', true));
                     <h4 class="text-success">Контактная информация: <?php echo $contact_information; ?> </h4>
 
                     <?php
-                    $blogusers = get_users('blog_id=1&orderby=nicename&role=subscriber');
-                    foreach ($blogusers as $user) {
-                        echo 'E-mail : ' . $user->user_email . "<br>";
-                        echo 'Пользователь : ' . $user->display_name . "<br>";
-                    }
+                    echo "Пользователь: ".$seller_users;
                     ?>
                 </div>
 
