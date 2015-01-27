@@ -16,8 +16,7 @@
 }
 
 .widget_loginlogout #loginform label, .widget_autoconnect_premium #loginform label{
-	display:inline-block;
-	width:2.75em;
+
 }
 
 .widget_loginlogout #rememberme, .widget_autoconnect_premium #rememberme{

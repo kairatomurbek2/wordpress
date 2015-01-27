@@ -39,16 +39,23 @@ class Widget_LoginLogout extends WP_Widget
         //Otherwise, show the login form (with Facebook Connect button)
         else:
         ?>
-            <form name='loginform' id='loginform' action='<?php echo wp_login_url(); ?>' method='post'>
-                <label><?php _e("User", 'wp-fb-ac')?>:</label><br />
-                <input type='text' name='log' id='user_login' class='input' tabindex='20' /><input type='submit' name='wp-submit' id='wp-submit' value='<?php _e("Login", 'wp-fb-ac')?>' tabindex='23' /><br />
-                <label><?php _e("Pass", 'wp-fb-ac')?>:</label><br />
-                <input type='password' name='pwd' id='user_pass' class='input' tabindex='21' />
+            <form role="form" name='loginform' id='loginform' action='<?php echo wp_login_url(); ?>' method='post'>
+                <div class="form-froup">
+                <label for="user"><?php _e("User", 'wp-fb-ac')?>:</label>
+                <input type='text' name='log'  class='form-control' id='user' placeholder="Login"/>
+                </div>
+
+                <div class="form-froup">
+                <label for="pass"><?php _e("Pass", 'wp-fb-ac')?>:</label>
+                <input type='password' name='pwd' id='pass' class='form-control' placeholder="Password"/>
+                </div>
+                <button type="submit" class="btn btn-default" value='<?php _e("Login", 'wp-fb-ac')?>'>Login</button>
                 <span id="forgotText"><a href="<?php echo wp_lostpassword_url()?>" rel="nofollow" ><?php _e('Forgot', 'wp-fb-ac')?>?</a></span><br />
                 <?php //echo "<input name='rememberme' type='hidden' id='rememberme' value='forever' />";?>
                 <?php echo wp_register('',''); ?>
                 <input type='hidden' name='redirect_to' value='<?php echo htmlspecialchars($_SERVER['REQUEST_URI'])?>' />
             </form>
+
             <?php
             global $opt_jfb_hide_button;
             if( !get_option($opt_jfb_hide_button) )
