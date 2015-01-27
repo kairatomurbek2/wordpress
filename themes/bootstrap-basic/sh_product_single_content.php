@@ -40,7 +40,7 @@ $seller_users = esc_html(get_post_meta(get_the_ID(), 'seller_users', true));
 
                 <div class="span8">
                     <h3>Описание товара</h3>
-
+                       <hr>
                     <?php the_content(); ?>
                 </div>
             </article>
