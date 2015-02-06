@@ -30,6 +30,10 @@ function create_second_hand_product_post_type()
 
 add_action('init', 'create_second_hand_product_post_type');
 
+
+
+
+
 function add_second_hand_product_meta_box()
 {
     add_meta_box('second_hand_product_meta_box',
